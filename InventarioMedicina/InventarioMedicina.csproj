@@ -45,12 +45,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Exceptionless, Version=4.3.2012.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Exceptionless.4.3.2012\lib\net45\Exceptionless.dll</HintPath>
+    </Reference>
+    <Reference Include="Exceptionless.NLog, Version=4.3.2012.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Exceptionless.NLog.4.3.2012\lib\net45\Exceptionless.NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Exceptionless.WebApi, Version=4.3.2012.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Exceptionless.WebApi.4.3.2012\lib\net45\Exceptionless.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -212,6 +229,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductoMVCController.cs" />
+    <Compile Include="Controllers\ProveedorMVCController.cs" />
+    <Compile Include="Controllers\TBLPRODUCTOapiController.cs" />
+    <Compile Include="Controllers\TBLPROVEEDORapiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -290,7 +311,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -324,6 +347,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\ProductoMVC\Create.cshtml" />
+    <Content Include="Views\ProductoMVC\Delete.cshtml" />
+    <Content Include="Views\ProductoMVC\Details.cshtml" />
+    <Content Include="Views\ProductoMVC\Edit.cshtml" />
+    <Content Include="Views\ProductoMVC\Index.cshtml" />
+    <Content Include="Views\ProveedorMVC\Create.cshtml" />
+    <Content Include="Views\ProveedorMVC\Delete.cshtml" />
+    <Content Include="Views\ProveedorMVC\Details.cshtml" />
+    <Content Include="Views\ProveedorMVC\Edit.cshtml" />
+    <Content Include="Views\ProveedorMVC\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

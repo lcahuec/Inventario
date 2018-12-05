@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Exceptionless;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,11 +14,18 @@ namespace InventarioMedicina
     {
         protected void Application_Start()
         {
+            ExceptionlessClient.Default.Configuration.DefaultData["FirstName"] = "Ludswing";
+            ExceptionlessClient.Default.Configuration.DefaultData["IgnoredProperty"] = "Informacion Test";
+
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            ExceptionlessClient.Default.Configuration.UseTraceLogger();
+            ExceptionlessClient.Default.Configuration.UseReferenceIds();
+            ExceptionlessClient.Default.RegisterWebApi(GlobalConfiguration.Configuration);
         }
     }
 }
